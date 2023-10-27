@@ -1,0 +1,65 @@
+<!-- Displays the list of projects  
+and a form to create a new project. --> 
+
+<head>
+    <style>
+      .card {
+        background-color: hwb(149 66% 13%);
+        color:#035103;
+        position: relative;
+      }
+      .card:hover {
+        background-color:rgb(145, 188, 188);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Your HTML code here -->
+    <div class="mb-5 p-5">
+      <% for( let project of projects ) { %>
+      <div class="card mb-2 w-50 m-auto">
+        <div class="card-header">
+          <strong> Name of the project : </strong>
+          <%= project.name %>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">
+            <strong> Author : </strong>
+            <%= project.author %>
+          </h6>
+          <p class="card-text">
+            <strong> Description : </strong>
+            <%= project.description %>
+          </p>
+  
+          <div class="m-auto text-end">
+            <a href="/project/<%=project._id%>" class="btn btn-primary m-auto"
+              >Open project</a
+            >
+            <style>
+              .btn-primary {
+                position: relative;
+                display: inline-block;
+                padding: 0.75rem 1.5rem;
+                border: none;
+                border-radius: 5px;
+                background-color: black;
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+                overflow: hidden;
+              }
+              .btn-primary:hover{
+                background-color:rgb(117, 106, 94);
+              }
+            </style>
+  
+            
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </body>

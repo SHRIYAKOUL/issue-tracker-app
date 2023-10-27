@@ -1,0 +1,22 @@
+<nav
+  class="navbar navbar-expand-sm"
+  style="
+    background-color: rgb(2, 50, 54);
+    height:70px;
+  "
+>
+  <div class="container-fluid">
+    <!-- Brand logo with a link to the homepage -->
+    <a class="navbar-brand ms-4" href="/"
+      style="font-weight: bolder;
+      color: rgb(205, 224, 205); "
+      >
+      Issue Tracker
+    </a>
+
+    <!-- Conditional inclusion of different forms based on the value of the "title" variable -->
+    <% if( title === "Project Page"){ %> <%- include('_issue_form'); %> <%
+    }else{ %> <%- include('_project_form'); %> <% } %>
+  </div>
+
+</nav>
