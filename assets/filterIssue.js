@@ -56,45 +56,4 @@ filterButton.addEventListener('click', function (e) {
   `;
     issueList.appendChild(Div);
   }
-});/*
-
-
-let filterIssueForm = document.getElementById('filter-issue-form');
-let issuesJson = document.getElementById('issue-data').getAttribute('data');
-let issues = JSON.parse(issuesJson);
-let issueList = document.getElementById('issues-list');
-
-filterIssueForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  let authorVal = filterIssueForm.querySelector(
-    'input[type=radio][name=author]:checked'
-  ).value;
-
-  let labelsList = filterIssueForm.querySelectorAll('input[type=checkbox]:checked');
-  let labelsArr = Array.from(labelsList).map(input => input.value);
-
-  let filteredIssues = issues.filter(issue => {
-    return issue.author === authorVal && labelsArr.every(label => issue.labels.includes(label));
-  });
-
-  issueList.innerHTML = '';
-
-  if (filteredIssues.length === 0) {
-    issueList.innerHTML = '<p>No matching issues found.</p>';
-  } else {
-    filteredIssues.forEach(issue => {
-      let div = document.createElement('div');
-      div.className = 'card w-100';
-      div.innerHTML = `
-        <div class="card-body">
-          <h4 class="card-title">Title: ${issue.title}</h4>
-          <h5 class="card-title">Author: ${issue.author}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Description: ${issue.description}</h6>
-        </div>
-      `;
-      issueList.appendChild(div);
-    });
-  }
 });
-*/

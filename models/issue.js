@@ -1,3 +1,8 @@
+/*
+   This file defines the schema for an Issue in the database. Each issue has a title,description,author,
+   and labels. All fields are required and are trimmed to remove any leading or trailing whitespace.
+*/
+
 const mongoose = require('mongoose');
 
 const issueSchema = new mongoose.Schema(

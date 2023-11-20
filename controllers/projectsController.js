@@ -1,9 +1,14 @@
-// projectscontroller.js
+/*
+  This file contains functions for creating a project, displaying a project’s details, and creating
+  an issue for a project. Each function handles database operations and redirects or renders views
+  accordingly. If there’s an error, it redirects back to the previous page.
+*/
+
 const Project = require('../models/project');
 const Issue = require('../models/issue');
 const { findById } = require('../models/project');
 
-// cretae a project for the user
+// Function to cretae a project for the user
 module.exports.create = async function(req,res){
   try{
     Project.create({
@@ -18,7 +23,7 @@ module.exports.create = async function(req,res){
   }
 };
  
-// find project and display it in the project page
+// Function to diplay project details
 module.exports.project = async function(req,res){
   try{
     let project = await Project.findById(req.params.id).populate({
@@ -37,7 +42,7 @@ module.exports.project = async function(req,res){
   }
 };
 
-// create issue
+// Function to create an issue for a project
 
 module.exports.createIssue = async function(req,res) {
   try{
